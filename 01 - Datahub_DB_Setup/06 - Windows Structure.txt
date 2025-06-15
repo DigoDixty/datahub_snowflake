@@ -1,0 +1,38 @@
+================================================================================================================================
+PREPARE IMAGES FROM DATAHUB - DOCKER COMPOSE
+================================================================================================================================
+Go to datahub quickstart if you want to get docker compose or some more information:
+https://docs.datahub.com/docs/quickstart
+
+Install Docker Desktop
+create a file compose.yml
+docker compose up
+after get all images
+docker compose stop
+==================================================================================================================================
+
+INSTALL SNOWCLI
+-- windows -- https://sfc-repo.snowflakecomputing.com/snowflake-cli/windows_x86_64/3.9.1/index.html
+
+$snow connection add 
+
+#INSERT VALUES OF CONNETION ( FOR EXAMPLE )
+Enter connection name: DATAHUB_CONN
+Enter account: GXKTFIS-DATAHUB_DEV
+Enter user: DATAHUB_USER
+Enter password: eyJraWQiOiIzNjg5MDExMjAwNSIsImFsZyI6IkVTMjU2In0.eyJwIjoiMTQ0MTAyMTMyOjE0NDEwMjAyMCIsImlzcyI6IlNGOjEwMTYiLCJleHAiOjE3NTA3MjIxNDZ9.ZD2OYLn7sTbovhA-Gi4FveouPAUa16Kh0xqcyFUwgtq90Kyf3DPSO7MM9d2NVy0miCJi_U_MjZMEsQsIqvlnhw
+Enter role: DATAHUB_ROLE
+Enter warehouse: DATAHUB_WH
+Enter database: ADM_SNOWFLAKE
+Enter schema: DATAHUB
+Enter host: GXKTFIS-DATAHUB_DEV.snowflakecomputing.com
+
+# Test to get a Token:
+$snow spcs image-registry token --connection DATAHUB_CONN --format=JSON
+
+# You will get:
+# {
+#     "token": "ver:3-hint:144101900-ETMsDgAAAZdaNWkuABRBRVMvQ0JDL1BLQ1M1UGFkZGluZwEAABAAELG7Y39NMecJSZWmIzigKxsAAACQeNAv/kdWnppvg1UZGOJJ0gaE7pjK36jtfefG9mGnhaf8I2cq8uqB/YI4Q51WtxEDr4HtK6+9OoLuQJc0CnYEqJ3dnaVii3oeHiwiJruciG/JsS6hohOZ3wOJ8SDGKCAl2EeNKDL8v/kElN8zYCfdNYyi81kh2UyNlkITHl5t5TNiD8qCrJ2E0QimWFZZ/kzdABTS6fuRKKldZLL/lx3593AIA/C3vw==",
+#     "expires_in": 3599
+# }
+
