@@ -8,7 +8,7 @@ FROM SPECIFICATION $$
 spec:
     containers:
     - name: datahub-actions
-      image: /adm_snowflake/datahub/datahub_repository/datahub-actions:head-slim
+      image: /adm_snowflake/datahub/datahub_repository/acryldata/datahub-actions:head-slim
       env: 
         ACTIONS_CONFIG: ""
         ACTIONS_EXTRA_PACKAGES: ""
